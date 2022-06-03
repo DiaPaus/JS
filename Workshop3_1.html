@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Workshop3_1</title>
+    <meta name="author" content="Diana Pausan">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container .header,
+        .container .footer,
+        .container .navigation,
+        .container .sidebar-content .content,
+        .container .sidebar-content .sidebar {
+            border-radius: 10px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #42657b;
+            color: #f2f0f9;
+            font-family: monospace;
+            text-align: center;
+        }
+
+        .container {
+            background-color: black;
+            width: 580px;
+            height: 700px;
+            padding-top: 100px;
+            padding-right: 350px;
+            padding-left: 350px;
+        }
+
+        .container .header {
+            background-color: #c8bfe7;
+            height: 55px;
+            width: 580px;
+            font-size: 45px;
+            padding-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .container .footer {
+            background-color: #c8bfe7;
+            height: 65px;
+            width: 580px;
+            font-size: 45px;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .container .navigation {
+            background-color: #ff7f27;
+            height: 35px;
+            width: 580px;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .container .sidebar-content {
+            display: flex;
+        }
+
+        .container .sidebar-content .content {
+            background-color: #00a2e8;
+            height: 140px;
+            width: 380px;
+            font-size: 30px;
+            padding-top: 110px;
+        }
+
+        .container .sidebar-content .sidebar {
+            background-color: #b5e61d;
+            height: 140px;
+            width: 180px;
+            font-size: 30px;
+            padding-top: 110px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <p>HEADER</p>
+        </div>
+        <div class="navigation">
+            <p>NAVIGATION</p>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar">
+                <p>SIDEBAR</p>
+            </div>
+            <div class="content">
+                <p>CONTENT</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>FOOTER</p>
+        </div>
+    </div>
+</body>
+
+</html>
