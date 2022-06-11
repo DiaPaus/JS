@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tema_week4_1</title>
+    <meta name="author" content="Diana Pausan">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            height: 600px;
+        }
+
+        .container .color {
+            background-color: #D0E3F2;
+            height: 120px;
+            width: 700px;
+            z-index: 1;
+
+        }
+
+        .container .image {
+            position: absolute;
+            z-index: 2;
+            margin-left: 200px;
+            margin-top: 40px;
+
+        }
+
+        .container .form {
+            position: absolute;
+            height: 270px;
+            width: 270px;
+            margin-left: -200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 15px;
+            z-index: 3;
+            background-color: white;
+            border-style: solid;
+            border-color: aliceblue;
+        }
+
+        .container .form :first-child {
+            align-self: center;
+        }
+
+        input.text {
+            border: none;
+            border-bottom: 2px solid black;
+        }
+
+        input.text:focus {
+            border: none;
+        }
+
+        textarea:hover {
+            color: black;
+        }
+
+        textarea {
+            border: none;
+            border-bottom: 2px solid black;
+        }
+
+        input.button {
+            align-self: center;
+            background-color: black;
+            color: rgb(145, 142, 142);
+            padding: 5px 15px 5px 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="color"></div>
+        <div class="image">
+            <img src="img2.jpg" height="400px" width="300px">
+        </div>
+
+        <div class="form">
+            <h1>CONTACT US</h1>
+            <input type="text" class="text" placeholder="Enter your Name">
+            <input type="text" class="text" placeholder="Enter a valid email address">
+            <textarea placeholder="Enter your message"></textarea>
+            <input type="submit" class="button" value="SUBMIT" />
+
+        </div>
+    </div>
+
+</body>
+
+</html>
