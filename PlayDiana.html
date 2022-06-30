@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var variante = ["rock", "paper", "scissors"];
+        var randomNumberComputer = Math.floor(Math.random() * variante.length);
+        var randomNumberUser = Math.floor(Math.random() * variante.length);
+        computer = variante[randomNumberComputer];
+        user = variante[randomNumberUser];
+        // console.log(computer);
+        // console.log(user);
+
+        if (computer === "rock") {
+            switch (user) {
+                case "rock":
+                    console.log('Computer choice: “Rock” \nUser choice: “Rock”  \n\nNo one wins!');
+                    break;
+                case "paper":
+                    console.log('Computer choice: “Rock” \nUser choice: “Paper” \n\nUser wins!');
+                    break;
+                default:
+                    console.log('Computer choice: “Rock” \nUser choice: "Scissors" \n\nComputer wins!');
+                    break;
+            }
+        }
+        else if (computer === "paper") {
+            switch (user) {
+                case "rock":
+                    console.log('Computer choice: "Paper" \nUser choice: “Rock”  \n\nComputer wins!');
+                    break;
+                case "paper":
+                    console.log('Computer choice: "Paper" \nUser choice: “Paper” \n\nNo one wins!');
+                    break;
+                default:
+                    console.log('Computer choice: "Paper" \nUser choice: "Scissors" \n\nUser wins!');
+                    break;
+            }
+        }
+        else {
+            switch (user) {
+                case "rock":
+                    console.log('Computer choice: "Scissors" \nUser choice: “Rock”  \n\nUser wins!');
+                    break;
+                case "paper":
+                    console.log('Computer choice: "Scissors" \nUser choice: “Paper” \n\nComputer wins!');
+                    break;
+                default:
+                    console.log('Computer choice: "Scissors" \nUser choice: "Scissors" \n\nNo one wins!');
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
