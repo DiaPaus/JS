@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Diana Pausan">
+    <title>RockPaperScissorsDianawithCounterAndImages</title>
+
+</head>
+
+<body>
+
+    <label>
+        <input type="radio" name="group_name" value="rock" id="rock" onclick="play()">
+        <img src="rock.jpg" alt="Rock">
+    </label>
+    <label>
+        <input type="radio" name="group_name" value="paper" id="paper" onclick="play()">
+        <img src="paper.jpg" alt="Paper">
+    </label>
+    <label>
+        <input type="radio" name="group_name" value="scissors" id="scissors" onclick="play()">
+        <img src="scissors.jpg" alt="Scissors">
+    </label>
+    <input type="button" value="Play" onclick="location.reload()">
+    <input type="button" value="End Game" onclick="winnerIs()">
+
+
+    <script>
+
+        function choices(choice1, choice2) {
+            return `Computer choice: ${choice1} \nUser choice: ${choice2}`;
+        }
+
+        var scoreComputer = 0;
+        var scoreUser = 0;
+        var user = "";
+        var computer = "";
+
+        function play() {
+            if (document.getElementById("rock").checked) { user = "rock" }
+            else if (document.getElementById("paper").checked) { user = "paper" }
+            else { user = "scissors" }
+
+            var options = ["rock", "paper", "scissors"];
+            var randomNumberComputer = Math.floor(Math.random() * options.length);
+            var computer = options[randomNumberComputer];
+
+            if (computer === user) {
+                alert(`Computer choice: ${computer}\nUser choice: ${user} \n\nNo one wins!` + `\nComputer: ${scoreComputer} \nUser: ${scoreUser}`)
+            }
+
+            else if (computer === "rock") {
+                switch (user) {
+                    case "paper":
+                        {
+                            alert(choices("Rock", "Paper") + '\n\nUser wins! ' + `\nComputer: ${scoreComputer} \nUser: ${scoreUser + 1}`)
+                            scoreUser += 1;
+                        };
+                        break;
+                    default:
+                        {
+                            alert(choices("Rock", "Scissors") + ' \n\nComputer wins!' + `\nComputer: ${scoreComputer + 1} \nUser: ${scoreUser}`);
+                            scoreComputer += 1;
+                        }
+                        break;
+                }
+            }
+            else if (computer === "paper") {
+                switch (user) {
+                    case "rock":
+                        {
+                            alert(choices("Paper", "Rock") + ' \n\nComputer wins!' + `\nComputer: ${scoreComputer + 1} \nUser: ${scoreUser}`);
+                            scoreComputer += 1;
+                        }
+                        break;
+                    default:
+                        {
+                            alert(choices("Paper", "Scissors") + '\n\nUser wins!' + `\nComputer: ${scoreComputer} \nUser: ${scoreUser + 1}`);
+                            scoreUser += 1;
+                        }
+                        break;
+                }
+            }
+            else {
+                switch (user) {
+                    case "rock":
+                        {
+                            alert(choices("Scissors", "Rock") + ' \n\nUser wins!' + `\nComputer: ${scoreComputer} \nUser: ${scoreUser + 1}`);
+                            scoreUser += 1;
+                        }
+                        break;
+                    default: {
+                        alert(choices("Scissors", "Paper") + ' \n\nComputer wins!' + `\nComputer: ${scoreComputer + 1} \nUser: ${scoreUser}`);
+                        scoreComputer += 1;
+                    }
+                        break;
+                }
+            }
+        }
+
+        function winnerIs() {
+            if (scoreComputer < scoreUser) { alert(`\nComputer: ${scoreComputer} \nUser: ${scoreUser}\nUser wins!`) }
+            else if (scoreComputer > scoreUser) { alert(`\nComputer: ${scoreComputer} \nUser: ${scoreUser}\nComputer wins!`) }
+            else { alert(`\nComputer: ${scoreComputer} \nUser: ${scoreUser}\nNo one wins!`) }
+        }
+    </script>
+
+</body>
+
+</html>
