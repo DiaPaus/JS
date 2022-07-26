@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TemaAjaxPromises</title>
+</head>
+
+<body>
+    <div id="containerID">
+        <div>
+            Enter name:<input type="text" id="name" /><br><br>
+            <button type="button" onclick="findAgeForName() ">Get age</button>
+            <button type="button" onclick="addPost()">Add functionality</button>
+            <button type="button" onclick="editPost()">Edit functionality</button>
+            <button type="button" onclick="deletePost()">Delete functionality</button>
+        </div>
+        <p id="postID"></p>
+    </div>
+    <script>
+        var apiURL = "https://api.agify.io?name=";
+        function findAgeForName() {
+            var name = document.getElementById("name").value;
+
+            fetch(`${apiURL}${name}`)
+                .then(response => response.json())
+                // .then(post => console.log(post))
+                .then(post => document.getElementById("postID").innerHTML = post.age)
+                .catch(error => console.log('Error: ' + error));
+
+        }
+
+        function addPost() {
+            var post = {
+                "name": "violeta",
+                "age": 25,
+                "count": 9000
+            };
+
+            fetch(`${apiURL}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(post)
+            })
+
+                .then(response => response.json())
+                .then(post => console.log(post))
+                .catch(error => console.log('Error: ' + error));
+
+        }
+        function editPost() {
+
+            var post = {
+                "name": "violeta",
+                "age": 25,
+                "count": 9000
+            };
+
+            fetch(`${apiURL}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(post)
+            })
+
+                .then(response => response.json())
+                .then(post => console.log(post))
+                .catch(error => console.log('Error: ' + error));
+
+        }
+
+        function deletePost() {
+            //Property as input
+            var name = "Diana";
+
+            fetch(`${apiURL}${name}`, {
+                method: 'DELETE',
+            })
+
+                .then(response => response.json())
+                .then(post => console.log(post))
+                .catch(error => console.log('Error: ' + error));
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

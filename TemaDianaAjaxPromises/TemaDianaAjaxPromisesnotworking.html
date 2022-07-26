@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TemaAjaxPromises</title>
+</head>
+
+<body>
+    <div id="containerID">
+        <div>
+            <button type="button" onclick="loadPostUsingFetch() ">Load Post via Fetch</button>
+        </div>
+        <p id="postID"></p>
+    </div>
+    <script>
+        var apiURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+        function loadPostUsingFetch() {
+            //Comes as input
+            var strDrink = "Blue Margarita";
+
+            fetch(`${apiURL}${strDrink}`)
+                .then(response => response.json())
+                // .then(post => console.log(post))
+                .then(post => document.getElementById("postID").innerHTML = post.drinks.strInstructions)
+                .catch(error => console.log('Error: ' + error));
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
