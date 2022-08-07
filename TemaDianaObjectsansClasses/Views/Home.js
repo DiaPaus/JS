@@ -27,6 +27,7 @@ function addPost() {
         .then(post => console.log(post))
         .catch(error => console.log('Error: ' + error));
 }
+
 function editPost() {
 
     var post = {
