@@ -1,0 +1,16 @@
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product img{
+    width:200px;
+}
+
+.product h1{
+    font-size: 15px;
+}
+
+.product{
+    padding:5px;
+}
