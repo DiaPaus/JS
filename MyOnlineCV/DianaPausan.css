@@ -1,0 +1,133 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.main {
+  padding: 10px;
+  color: #333;
+  margin: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+@media only screen and (max-width: 600px) {
+  #main-menu .nav-bar {
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: xx-small;
+  }
+
+  .nav-button {
+    padding: 10px 3px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  #main-menu .nav-bar {
+    padding-left: 20px;
+    margin: 10px;
+    font-size: small;
+  }
+
+  #right-side {
+    margin: 10px 10px;
+  }
+
+  .nav-button {
+    padding: 10px 10px;
+  }
+}
+
+@media only screen and (min-width: 990px) {
+  #main-menu .nav-bar {
+    width: 20%;
+    position: fixed;
+    flex-direction: column-reverse;
+    padding-left: 20px;
+  }
+
+  #right-side {
+    width: 70%;
+    right: 10px;
+    position: absolute;
+  }
+
+  .nav-button {
+    margin: 20px 0px;
+  }
+}
+
+#main-menu .nav-bar {
+  outline: rgb(244 202 244 / 58%) 4px solid;
+  background: rgb(148 236 243 / 76%);
+  display: flex;
+  border-radius: 20px;
+}
+
+#right-side {
+  padding: 40px;
+  outline: rgb(148 236 243 / 76%) 4px solid;
+  border-radius: 20px;
+  background: rgb(244 202 244 / 58%);
+}
+
+#main-menu .nav-bar li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #333;
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+h1 {
+  padding-top: 30px;
+}
+
+h2 {
+  font-size: medium;
+  padding-top: 15px;
+}
+
+
+.collapsible {
+  background-color: rgb(148 236 243 / 76%);
+  color: #333;
+  text-shadow: 1px 1px 1px #ccc;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border-color: rgb(244 202 244 / 58%);
+  border-radius: 20px;
+  border-style: solid;
+  text-align: left;
+  font-size: 15px;
+}
+
+.active,
+.collapsible:hover {
+  background-color: rgb(244 202 244 / 58%);
+}
+
+.collapsible:after {
+  content: '\02795';
+  /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: rgb(244 202 244 / 58%);
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796";
+  /* Unicode character for "minus" sign (-) */
+}
+
+.content {
+  padding: 20px;
+  display: none;
+  overflow: hidden;
+  background-color: rgb(244 202 244 / 58%);
+  border-radius: 30px;
+}
